@@ -1,6 +1,7 @@
 //here we are importing the express and connection bro 
 import express, { json } from 'express';
 import { connect, connection } from 'mongoose';
+const cors = require('cors');
 
 // creating an instance of express app
 const app = express();
@@ -12,6 +13,11 @@ const PORT = process.env.PORT || 3000;
 // Ensures request body (JSON payload) is accessible in req.body for route handling
 // If not use we can't able to access the data came from PUT and POST request from client 
 app.use(json());
+
+//CORS (Cross-Origin Resource Sharing) is a browser security feature that controls which
+// web pages can access resources on a given domain. It prevents malicious websites from making requests to other domains on behalf of a user.
+//Its like a bouncer in a club which gives you the entry bro 
+app.use(cors());
 
 // Connect to your MongoDB database
 connect('mongodb://localhost:27017/myDatabase',
