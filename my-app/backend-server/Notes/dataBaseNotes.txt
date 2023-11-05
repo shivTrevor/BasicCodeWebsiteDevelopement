@@ -1,3 +1,7 @@
+//mongosh -> opening mongodb shell (CLI interaction only )
+//mongod -> now we can open the data base and use it via port in our application 
+
+//These commands should be run in the terminal bro 
 // Step 1: Inserting a Document
 db.collection.insertOne({ field1: value1, field2: value2, ... });
 
