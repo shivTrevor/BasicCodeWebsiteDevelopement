@@ -4,6 +4,11 @@ The keys are strings, and the values can be any JSON data type,
 including strings, numbers, booleans, null values, arrays, and other objects.
 
 
+This JSON object represents a person named John Doe who lives in New York City.
+He has three hobbies: reading, hiking, and traveling.
+He also has an address with a street address, city, state, and zip code.
+
+
 {
   "name": "John Doe",
   "age": 30,
@@ -22,10 +27,8 @@ including strings, numbers, booleans, null values, arrays, and other objects.
 }
 
 
-This JSON object represents a person named John Doe who lives in New York City.
-He has three hobbies: reading, hiking, and traveling.
-He also has an address with a street address, city, state, and zip code.
 
+//another example
 {
   "name": "Whiskers",
   "age": 2,
