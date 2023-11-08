@@ -20,6 +20,12 @@ show dbs
  //Drop the data base 
  db.dropDatabase()
 
+ //show collection
+ show collection
+
+ //create collection => using mongodb (cli)
+ db.createCollection("collection-name)
+
 
 //These commands should be run in the terminal bro 
 // Step 1: Inserting a Document
@@ -65,3 +71,10 @@ db.collection.find().sort({ field: 1 }); // 1 for ascending, -1 for descending
 
 // Step 10: Limiting Results
 db.collection.find().limit(10);
+
+//showing collections in the mongoose
+const mongoose = require('mongoose');
+
+const db = mongoose.connection;
+const collections = await db.listCollections();
+console.log(collections);
