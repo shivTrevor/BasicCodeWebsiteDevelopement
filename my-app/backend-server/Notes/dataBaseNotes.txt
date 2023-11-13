@@ -116,6 +116,7 @@ const userSchema = new mongoose.Schema({
   // ... (other 97 fields)
 });
 
+//'User' it is the db name which is defined in my data base bro 
 const User = mongoose.model('User', userSchema);
 
 const User = require('./userModel'); // Assuming this is how you've exported your User model
