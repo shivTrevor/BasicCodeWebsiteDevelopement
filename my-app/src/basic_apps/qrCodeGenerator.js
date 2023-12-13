@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import QRCode from 'qrcode.react';
 
+// Here generating the qr code .... from the text we enter there bro 
 const QrCodeGenerator = () => {
   const [text, setText] = useState('');
 
