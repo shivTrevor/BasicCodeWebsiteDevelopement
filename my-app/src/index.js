@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Hoverable from './hoverable/MC.js';
+import  QR  from './basic_apps/videoStreaming.js'
+import OTP from './basic_apps/OTP/twilioOtpGenerator.js'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-
-    <Hoverable />
+    <OTP />
+  
   </React.StrictMode>
 );
 
