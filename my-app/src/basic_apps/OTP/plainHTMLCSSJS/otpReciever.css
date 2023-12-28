@@ -4,11 +4,11 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    /* pointer-events: none; */
   }
   
   .otp-container {
-    display: flex;
-    
+    display: flex;  
   }
   
   input {
