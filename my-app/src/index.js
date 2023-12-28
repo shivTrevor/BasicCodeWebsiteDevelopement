@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import  QR  from './basic_apps/videoStreaming.js'
-import OTP from './basic_apps/OTP/twilioOtpGenerator.js'
+// import OTP from './basic_apps/OTP/twilioOtpGenerator.js'
+import Rough from './basic_apps/OTP/inputOTPField'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <OTP />
-  
+ <Rough />
   </React.StrictMode>
 );
 
