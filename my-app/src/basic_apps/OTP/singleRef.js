@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './roughCSS.css';
+import './trialCSS.css';
 
 const OtpContainer = () => {
   const [otpValues, setOtpValues] = useState(['', '', '', '']);
