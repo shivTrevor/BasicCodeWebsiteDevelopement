@@ -41,5 +41,3 @@ const sendEmail = async () => {
 // Call the function to send the email
 sendEmail();
 
-
-2
