@@ -1,40 +1,52 @@
-const express = require('express');
-const mongoose = require('mongoose');
+//using mongoclient i am connecting with the data base my freind par ab kaise connect karenge data base se bro can you tell me that bro 
 
-const app = express();
-const port = 3000;
+const { MongoClient } = require('mongodb');
 
-// Replace 'your_database_url' with your actual MongoDB Atlas connection string
-const atlasConnectionUrl = 'mongodb://localhost:27017';
+// Connection URL and database name
+const url = 'mongodb://127.0.0.1:27017'; // Replace with your MongoDB connection string
+const dbName = 'showBizz'; // Replace with your database name
 
-async function startServer() {
+console.log("running")
+// Create a new MongoClient
+const client = new MongoClient(url);
+console.log("running")
+// Connect to the MongoDB server
+async function connect() {
   try {
-    // Connect to MongoDB Atlas
-    await mongoose.connect(atlasConnectionUrl, { useNewUrlParser: true, useUnifiedTopology: true });
-
-    // Get the default connection
-    const db = mongoose.connection;
-
-    // Event listener for connection errors
-    db.on('error', (error) => {
-      console.error('Connection error:', error);
-    });
-
-    // Event listener for successful connection (executes only once)
-    db.once('open', () => {
-      console.log('Connected to the database');
-
-      // Start your Express app or perform other setup here
-      app.listen(port, () => {
-        console.log(`Server is running on port ${port}`);
-      });
-    });
-  } catch (error) {
-    console.error('Connection error:', error);
+    await client.connect();
+    console.log('Connected to the database');
+    console.log("running")
+    return client.db(dbName);
+  } catch (err) {
+    console.error('Error connecting to the database', err);
+    throw err;
   }
 }
 
-// Call the function to start the server
-startServer();
+// Close the connection
+function close() {
+  client.close();
+  console.log('Connection closed');
+}
 
-// Define your routes and other Express configurations below
+
+//here we are connecting the data base with the mongodb client and try to connect it bhaai
+
+// Example usage
+async function performDatabaseOperations() {
+  const db = await connect();
+
+  try {
+    // Your database operations go here
+    // For example:
+    const collection = db.collection('yourCollectionName');
+    const result = await collection.find({}).toArray();
+    console.log(result);
+  } finally {
+    // Close the connection when done
+    close();
+  }
+}
+
+// Call the function to perform database operations
+performDatabaseOperations();
